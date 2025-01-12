@@ -1,0 +1,13 @@
+<nav>
+  <ul class="menu">
+    <li
+      *ngFor="let item of menuItems"
+      [routerLink]="[item.route]"
+      routerLinkActive="active"
+      [ngClass]="{ 'menu-item': true, active: item.isActive }"
+    >
+      <span class="menu-icon">{{ item.icon }}</span>
+      <span class="menu-text">{{ item.name }}</span>
+    </li>
+  </ul>
+</nav>
