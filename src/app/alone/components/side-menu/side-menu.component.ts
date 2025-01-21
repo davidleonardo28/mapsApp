@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 interface MenuItem {
   name: string;
@@ -8,7 +10,9 @@ interface MenuItem {
 }
 
 @Component({
-  selector: 'maps-side-menu',
+  selector: 'side-menu',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './side-menu.component.html',
   styleUrl: './side-menu.component.css',
 })
@@ -28,6 +32,7 @@ export class SideMenuComponent {
     },
     { route: '/maps/markers', name: 'Markers', icon: '📍', isActive: false },
     { route: '/maps/properties', name: 'Houses', icon: '🏠', isActive: false },
+    { route: '/alone', name: 'Alone Page', icon: 'ST', isActive: false },
   ];
 
   // Método para manejar el estado activo al hacer clic en un elemento
